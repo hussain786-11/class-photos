@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myImage {
+            display: none;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px 6px;
+            object-fit: cover;
+        }
+        body{
+        
+            background-color: yellowgreen;
+
+        }
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h2>Enter the number to view the image</h2>
+    <input type="text" id="numberInput" placeholder="2411it0100(1-80)" />
+    <button onclick="showImage()">Submit</button>
+    <br><br>
+    <img id="myImage" src="1.png" alt="Your Image">
+    <script>
+        function showImage() {
+            const roll_number = document.getElementById('numberInput').value;
+            const images = document.getElementById('myImage');
+            images.style.display = 'block';
+            let num = roll_number.substring(10);
+            // images.src = `${num}.png`;
+            images.src= num+".png";
+        }
+        </script>
+    </center>
+    </body>
+</html>

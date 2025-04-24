@@ -1,1 +1,1 @@
-# class-photos
+photos

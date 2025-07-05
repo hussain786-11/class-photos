@@ -1,137 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #myImage {
-            display: none;
-            border-radius: 10px;
-            box-shadow: 0px 2px 5px 6px;
-            object-fit: cover;
-        }
-        body{
+  <style>
+    .a {
+      position: fixed;
+      display: flex;
+      width: 300px;
+      height: 380px;
+      flex-direction: column;
+      background-color: beige;
+      border: 8px solid yellow;
+      box-shadow: 2px 2px 5px 5px;
+      padding: 15px;
+    }
 
-            background-color: rgb(204, 201, 25);
+    body {
+      display: flex;
+      justify-content: center;
+      margin-top: 250px;
+      background-image: url('hii.jpg');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
 
-        }
-        img{
-            width: 300px;
-            height: 300px;
-        }
-         .a {
-            background-color: greenyellow;
-            display: flex;
-            justify-content: end;
-            position: relative;
-            top: 0;
-          
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        a{
-            color: black;
-            text-decoration: none;
-            padding: 10px;
-            font-size: 20px;
-            margin: 10px;
-    
-        }
-        
-        .b:hover {
-            color: red;
-            font-weight: bold;
-        }
-      
-        p{
-            text-align: center;
-            font-size: 30px;
-            color: blue;
-            margin-top: 100px;
-            font-style: oblique;
-        }
-        h2{
-            font-style: italic;
-            color: rgb(26, 39, 221);
-        }
-        .b{
-            background-color: lightgray;
-            border-radius: 5px;
-            border: 3px solid black;
-        }
-        @keyframes example {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        @keyframes borderColorAnim {
-            0% {
-                border-color: blue;
-            }
-            50% {
-                border-color: green;
-            }
-            100% {
-                border-color:red;
-            }
-        }
-        #numberInput {
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 20px;
-            border: 2px solid #ccc;
-            width: 200px;
-            animation: example 1s forwards, borderColorAnim 2s infinite;
-            border: 6px solid blue;
-        }
-        #inputButton {
-            background-color: ;
-            color: black;
-            border: none;
-            border-radius: 20px;
-        height: 40px;
-            cursor: pointer;
+    #but {
+      margin-top: 20px;
+      border-radius: 30px;
+      border: 3px solid blue;
+      cursor: pointer;
+    }
 
-        }
-        #er{
-            position: sticky;
-        }
-    </style>
+    span {
+      font-size: 12px;
+      color: red;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    input {
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
 <body>
-    <div id="er">
+  <form onsubmit="return submitForm()" action="https://hussain786-11.github.io/class-photos/">
     <div class="a">
+      <center><h1>Login</h1></center>
 
-    <a class="b" href="https://www.instagram.com/d.hussain_786?igsh=MncyeWhlZmltN3d5">Instagram</a>
-<a class="b" href="https://www.facebook.com/share/1CghLrLP1n/">Facebook</a>
-<a class="b" href="https://wa.me/qr/S2EJIPAJNQQUG1">WhatsApp</a>
-</div>
-</div>
-    <center>
-    <h2>Enter the roll number to view the image</h2><br>
-    <input type="text" id="numberInput" placeholder="2411it0100(1-80)" />
-    <button id="inputButton" onclick="showImage()">Submit</button>
-    <br><br>
-    <img id="myImage" src="1.png" alt="Your Image">
-    <script>
-        function showImage() {
-            const roll_number = document.getElementById('numberInput').value;
-            const images = document.getElementById('myImage');
-            if (roll_number.length !== 12 || !roll_number.startsWith('2411it')) {
-                alert('Please enter a valid roll number in the format 2411it0100');
-                images.style.display = 'none';
-                return;
-            }
-            images.style.display = 'block';
-            let num = roll_number.substring(10);
-            // images.src = `${num}.png`;
-            images.src= num+".png";
-        }
-        </script>
-    </center>
-    </body>
+      <label for="name">Name:</label>
+      <input type="text" placeholder="Enter your name" id="name"><br>
+
+      <label for="email">Email:</label>
+      <input type="email" placeholder="Enter your email" id="email" name="email" required><br>
+
+      <label for="password">Password:</label>
+      <input type="password" placeholder="Enter password" id="password">
+      <span id="error-msg">Password must be 123456</span><br>
+
+      <a href="signup.html">Sign up?</a>
+      <button type="submit" id="but">Login</button>
+    </div>
+  </form>
+
+  <script>
+    function submitForm() {
+      let pss = document.getElementById("password").value;
+      let correct = "123456";
+      let errorSpan = document.getElementById("error-msg");
+
+      if (pss === correct) {
+        errorSpan.style.display = "none";
+        alert("Correct");
+        return true;
+      } else {
+        errorSpan.style.display = "inline";
+        alert("Please enter correct password");
+        return false;
+      }
+    }
+  </script>
+</body>
 </html>

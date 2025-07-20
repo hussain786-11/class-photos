@@ -1,85 +1,82 @@
-/* App.css */
-
-body {
+/* General Reset */
+* {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f9f9f9, #e0eafc);
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+}
+
+/* Container */
 .container {
-  padding: 30px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.hussain h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  color: #4b6cb7;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.a {
-  margin: 20px 0;
-}
-
-.b {
-  margin: 0 15px;
-  text-decoration: none;
-  padding: 10px 20px;
-  background-color: #4b6cb7;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #24292e;
   color: white;
-  border-radius: 25px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 15px 30px;
+}
+
+.logo {
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
-.b:hover {
-  background-color: #182848;
-  transform: scale(1.05);
+.social-links a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
+.social-links a:hover {
+  color: #1da1f2;
+}
+
+/* Center content */
 .form-section {
-  background-color: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin: auto;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-input[type="text"] {
+input {
   padding: 10px;
-  width: 70%;
-  border: 2px solid #4b6cb7;
-  border-radius: 10px;
+  width: 250px;
   font-size: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 button {
-  padding: 10px 25px;
-  background-color: #4b6cb7;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #24292e;
   color: white;
   border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #182848;
-  transform: scale(1.05);
+  background-color: #1a1e22;
 }
 
-img#myImage {
+img {
   margin-top: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-img#myImage:hover {
-  transform: scale(1.05);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
